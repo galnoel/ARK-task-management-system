@@ -938,9 +938,6 @@
   z-index: 1;
   margin-left: -52px;
 }
-.rectangle-group-register:hover {
-  background-color: #e6e6e6;
-}
 .frame-parent-register,
 .rectangle-group-register,
 .register-background-parent-register {
@@ -1365,9 +1362,13 @@
 .teams {
   flex: 1;
   position: relative;
+  font-size: var(--font-size-sm);
   letter-spacing: -0.02em;
   line-height: 24px;
   font-weight: 600;
+  font-family: var(--medium-type16);
+  color: var(--color-black);
+  text-align: left;
 }
 .overview,
 .overview1 {
@@ -1381,10 +1382,12 @@
   gap: var(--gap-xs);
 }
 .overview {
-  border-radius: var(--br-3xs);
-  background-color: var(--color-whitesmoke-100);
-  flex-direction: column;
+  cursor: pointer;
+  border: 0;
   padding: var(--padding-3xs) var(--padding-xl);
+  background-color: var(--color-whitesmoke-100);
+  border-radius: var(--br-3xs);
+  flex-direction: column;
 }
 .vuesaxlinearmessage-icon {
   height: 24px;
@@ -1395,9 +1398,13 @@
 .message {
   flex: 1;
   position: relative;
+  font-size: var(--font-size-sm);
   letter-spacing: -0.02em;
   line-height: 24px;
   font-weight: 600;
+  font-family: var(--medium-type16);
+  color: var(--color-black);
+  text-align: left;
 }
 .mentors,
 .mentors1 {
@@ -1411,9 +1418,12 @@
   gap: var(--gap-xs);
 }
 .mentors {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs) var(--padding-xl);
+  background-color: transparent;
   border-radius: var(--br-3xs);
   flex-direction: column;
-  padding: var(--padding-3xs) var(--padding-xl);
 }
 .vuesaxlinearsetting-2-icon {
   height: 24px;
@@ -1424,9 +1434,13 @@
 .settings2 {
   flex: 1;
   position: relative;
+  font-size: var(--font-size-sm);
   letter-spacing: -0.02em;
   line-height: 24px;
   font-weight: 600;
+  font-family: var(--medium-type16);
+  color: var(--color-black);
+  text-align: left;
 }
 .settings,
 .settings1 {
@@ -1440,8 +1454,11 @@
   gap: var(--gap-xs);
 }
 .settings {
-  border-radius: var(--br-3xs);
+  cursor: pointer;
+  border: 0;
   padding: var(--padding-3xs) var(--padding-xl);
+  background-color: transparent;
+  border-radius: var(--br-3xs);
 }
 .menu-content-parent,
 .settings,
@@ -1537,20 +1554,22 @@
 .search-placeholder,
 .searching {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 2.5px 0 0;
+  align-items: center;
+  gap: 10px;
 }
 .searching {
-  flex: 1;
   border-radius: var(--br-3xs);
   border: 2px solid var(--color-black);
   box-sizing: border-box;
-  flex-direction: row;
-  padding: 13px 18px;
-  gap: 15px;
-  min-width: 75px;
+  height: 48px;
+  padding: 5px;
+}
+.search-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 0;
+  font-size: inherit;
 }
 .category-icon {
   height: 24px;
@@ -1747,9 +1766,70 @@
   gap: var(--gap-9xs);
 }
 .vuesaxlinearbook-icon {
-  width: 24px;
   height: 24px;
+  width: 24px;
   position: relative;
+  min-height: 24px;
+}
+.all-task {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 24px;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 49px;
+}
+.course {
+  border: none;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-whitesmoke-200);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-3xs) 44px var(--padding-3xs) var(--padding-xl);
+  gap: var(--gap-xs);
+  white-space: nowrap;
+  color: var(--secondary-500);
+}
+.course:hover {
+  background-color: rgb(239, 239, 239);
+}
+.task-icon {
+  height: 26px;
+  width: 26px;
+  position: relative;
+  object-fit: cover;
+  min-height: 26px;
+}
+.my-task {
+  flex: 1;
+  position: relative;
+  font-size: var(--font-size-sm);
+  letter-spacing: -0.02em;
+  line-height: 24px;
+  font-weight: 600;
+  font-family: var(--font-plus-jakarta-sans);
+  color: var(--secondary-500);
+  text-align: left;
+}
+.course1 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs) 35px var(--padding-3xs) var(--padding-xl);
+  background-color: var(--primary-0);
+  width: 149px;
+  border-radius: var(--br-3xs);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  gap: var(--gap-xs);
+  white-space: nowrap;
+}
+.course1:hover {
+  background-color: rgb(239, 239, 239);
 }
 .task-progress {
   display: flex;
