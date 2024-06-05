@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@500;600;700;800&display=swap"
+    />
+  </head>
+  <body>
+    <div class="sign-in-register">
+      <section class="sign-in1-register">
+        <div class="sign-in-content-register">
+          <div class="frame-parent-register">
+            <div class="rectangle-parent-register">
+              <div class="frame-child-register"></div>
+              <div class="back-parent-register">
+                <b class="back-register" id="backTextRegister">Back</b>
+                <img
+                  class="vuesaxlineararrow-right-icon-register"
+                  loading="lazy"
+                  alt=""
+                  src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\back.png"
+                  id="vuesaxlineararrowRightIconRegister"
+                />
+              </div>
+              <div class="login-wrapper-register">
+                <div class="login-register" id="lOGINTextRegister">LOGIN</div>
+              </div>
+            </div>
+            <div class="register-background-parent-register">
+              <div class="register-background-register"></div>
+              <button class="rectangle-group-register">
+                <div class="frame-item-register"></div>
+                <div class="register-register">Register</div>
+              </button>
+            </div>
+          </div>
+          <div class="sign-in-content-inner-register">
+            <div class="frame-group-register">
+              <div class="ark-wrapper-register">
+                <b class="ark-register">ARK</b>
+              </div>
+              <div class="name-parent-register">
+                <div class="name-register">
+                  <input
+                    type="text"
+                    class="name-input-register"
+                    placeholder="Name"
+                    id="nameInput"
+                  />
+                </div>
+                <div class="line-wrapper-register">
+                  <div class="frame-inner-register"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="email-input-border-parent-register">
+          <div class="email-input-border-register"></div>
+          <div class="email-input-content-register">
+            <div class="email-input-fields-register">
+              <div class="email-field-register">
+                <input
+                  type="email"
+                  class="email-input-register"
+                  placeholder="Email"
+                  id="emailInput"
+                />
+                <div class="email-field-inner-register">
+                  <div class="line-div-register"></div>
+                </div>
+              </div>
+              <div class="password-field-register">
+                <div class="password-input-register">
+                  <input
+                    type="password"
+                    id="password-field"
+                    class="password-field-register"
+                    placeholder="Password"
+                  />
+                  <img
+                    src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\show.png"
+                    alt="Show Password"
+                    class="show-password-icon-R"
+                    onclick="togglePasswordVisibility()"
+                  />
+                </div>
+                <div class="password-field-inner-register">
+                  <div class="frame-child1-register"></div>
+                </div>
+                <div class="account-options-register">
+                  <div class="login-option-register">
+                    <div class="login-link-register">
+                      <div class="already-have-an-register">
+                        Already have an account?
+                      </div>
+                      <b class="login1-register" id="loginTextRegister"
+                        >Login</b
+                      >
+                    </div>
+                  </div>
+                  <button
+                    id="registerButton"
+                    style="
+                      text-decoration: none;
+                      color: inherit;
+                      background: none;
+                      border: none;
+                      cursor: pointer;
+                    "
+                  >
+                    <div class="register-button-register">
+                      <div
+                        class="register-button-background-register"
+                        id="registerButtonBackgroundRegister"
+                      ></div>
+                      <div
+                        class="register1-register"
+                        id="registerText1Register"
+                      >
+                        Register
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      var backTextRegister = document.getElementById("backTextRegister");
+      if (backTextRegister) {
+        backTextRegister.addEventListener("click", function (e) {
+          // Redirect to Landing page
+          window.location.href = "LandingPage.html"; // Replace with your Landing page URL
+        });
+      }
+      var lOGINTextRegister = document.getElementById("lOGINTextRegister");
+      if (lOGINTextRegister) {
+        lOGINTextRegister.addEventListener("click", function (e) {
+          // Redirect to Login page
+          window.location.href = "Login.html"; // Replace with your Login page URL
+        });
+      }
+      var loginTextRegister = document.getElementById("loginTextRegister");
+      if (loginTextRegister) {
+        loginTextRegister.addEventListener("click", function (e) {
+          // Redirect to Login page
+          window.location.href = "Login.html"; // Replace with your Login page URL
+        });
+      }
+      var vuesaxlineararrowRightIconRegister = document.getElementById(
+        "vuesaxlineararrowRightIconRegister"
+      );
+      if (vuesaxlineararrowRightIconRegister) {
+        vuesaxlineararrowRightIconRegister.addEventListener(
+          "click",
+          function (e) {
+            window.location.href = "LandingPage.html"; // Replace with your Landing page URL
+          }
+        );
+      }
+
+      document
+        .getElementById("registerButton")
+        .addEventListener("click", function (e) {
+          var nameInput = document.getElementById("nameInput").value;
+          var emailInput = document.getElementById("emailInput").value;
+          var passwordInput = document.getElementById("password-field").value;
+
+          if (nameInput === "" || emailInput === "" || passwordInput === "") {
+            alert("Please fill in all fields.");
+            e.preventDefault(); // Prevent the default action (redirect)
+          } else {
+            window.location.href = "Login.html"; // Redirect to Login page
+          }
+        });
+
+      function togglePasswordVisibility() {
+        var passwordField = document.getElementById("password-field");
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+        } else {
+          passwordField.type = "password";
+        }
+      }
+    </script>
+  </body>
+</html>

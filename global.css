@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --small-text: Inter;
+  --font-plus-jakarta-sans: "Plus Jakarta Sans";
+  --font-josefin-sans: "Josefin Sans";
+
+  /* font sizes */
+  --small-text-size: 16px;
+  --font-size-21xl: 40px;
+  --font-size-5xl: 24px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-darkslategray-100: #454545;
+  --color-black: #000;
+
+  /* Spacing */
+  --spacing-m: 48px;
+
+  /* Gaps */
+  --gap-xl: 20px;
+  --gap-5xl: 24px;
+  --gap-5xs: 8px;
+
+  /* Paddings */
+  --padding-12xs: 1px;
+  --padding-xl: 20px;
+  --padding-204xl: 223px;
+  --padding-5xl: 24px;
+  --padding-3xs: 10px;
+
+  /* Border radiuses */
+  --br-9xs: 4px;
+  --br-5xs: 8px;
+
+  /* Effects */
+  --button-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/*Login Page*/
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-plus-jakarta-sans: "Plus Jakarta Sans";
+
+  /* font sizes */
+  --font-size-xl: 20px;
+  --font-size-base: 16px;
+  --font-size-mini: 15px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gainsboro: #d9d9d9;
+  --color-gray: rgba(0, 0, 0, 0.5);
+
+  /* Gaps */
+  --gap-base: 16px;
+
+  /* Paddings */
+  --padding-xl: 20px;
+  --padding-11xs: 2px;
+  --padding-12xs: 1px;
+
+  /* Border radiuses */
+  --br-xl: 20px;
+}
+
+/*Register Page*/
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-plus-jakarta-sans: "Plus Jakarta Sans";
+
+  /* font sizes */
+  --font-size-xl: 20px;
+  --font-size-base: 16px;
+  --font-size-mini: 15px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gainsboro-100: #d9d9d9;
+  --color-gray: rgba(0, 0, 0, 0.5);
+
+  /* Gaps */
+  --gap-xl: 20px;
+  --gap-base: 16px;
+  --gap-lgi: 19px;
+
+  /* Paddings */
+  --padding-xl: 20px;
+  --padding-11xs: 2px;
+  --padding-12xs: 1px;
+  --padding-smi: 13px;
+
+  /* Border radiuses */
+  --br-xl: 20px;
+}
+
+/*Teams Page*/
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --medium-type16: "Plus Jakarta Sans";
+
+  /* font sizes */
+  --font-size-sm: 14px;
+  --medium-type16-size: 16px;
+  --medium-type12-size: 12px;
+  --font-size-11xl: 30px;
+  --font-size-5xl: 24px;
+  --font-size-lg: 18px;
+
+  /* Colors */
+  --color-whitesmoke-100: #f4f4f4;
+  --primary-0: #fff;
+  --secondary-500: #141522;
+  --color-gray-100: rgba(0, 0, 0, 0.5);
+  --color-black: #000;
+
+  /* Gaps */
+  --gap-9xs: 4px;
+  --gap-xs: 12px;
+
+  /* Paddings */
+  --padding-xl: 20px;
+  --padding-5xl: 24px;
+  --padding-11xs: 2px;
+  --padding-3xs: 10px;
+
+  /* Border radiuses */
+  --br-3xs: 10px;
+}
