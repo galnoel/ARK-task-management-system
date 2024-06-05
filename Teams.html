@@ -20,42 +20,39 @@
               <b class="ark">ARK</b>
             </div>
             <nav class="side-menu1">
-              <div class="overview">
+              <button id="overviewButton" class="overview">
                 <div class="overview1">
                   <img
                     class="vuesaxlinearcategory-2-icon"
                     loading="lazy"
                     alt=""
-                    src="./public/vuesaxlinearcategory2.svg"
+                    src="Foto\menu.png"
                   />
-
                   <b class="teams">Teams</b>
                 </div>
-              </div>
-              <div class="mentors">
+              </button>
+              <button class="mentors">
                 <div class="mentors1">
                   <img
                     class="vuesaxlinearmessage-icon"
                     loading="lazy"
                     alt=""
-                    src="./public/vuesaxlinearmessage.svg"
+                    src="Foto/message.png"
                   />
-
                   <b class="message">Message</b>
                 </div>
-              </div>
-              <div class="settings">
+              </button>
+              <button class="settings">
                 <div class="settings1">
                   <img
                     class="vuesaxlinearsetting-2-icon"
                     loading="lazy"
                     alt=""
-                    src="./public/vuesaxlinearsetting2.svg"
+                    src="Foto\settings.png"
                   />
-
                   <b class="settings2">Settings</b>
                 </div>
-              </div>
+              </button>
             </nav>
           </div>
         </div>
@@ -69,9 +66,8 @@
               class="notif-icon"
               loading="lazy"
               alt=""
-              src="./public/notif.svg"
+              src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\notification-bell.png"
             />
-
             <div class="profile-icon">
               <div class="profile-image">
                 <b class="teams1">Teams</b>
@@ -82,20 +78,21 @@
                         <img
                           class="search-normal-icon"
                           alt=""
-                          src="./public/searchnormal.svg"
+                          src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\search.png"
                         />
-
-                        <div class="search-placeholder">
-                          <a class="search-course">Join Team</a>
-                        </div>
+                        <input
+                          type="text"
+                          class="search-input"
+                          placeholder="Search..."
+                          aria-label="Search"
+                        />
                       </div>
                       <button class="category">
                         <img
                           class="category-icon"
                           alt=""
-                          src="./public/category@2x.png"
+                          src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\plus.png"
                         />
-
                         <a class="new-team">New Team</a>
                       </button>
                     </div>
@@ -111,7 +108,7 @@
               class="notification-content-icon"
               loading="lazy"
               alt=""
-              src="./public/vector.svg"
+              src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\profile-user.png"
             />
           </div>
         </section>
@@ -128,9 +125,8 @@
                     class="image-icon"
                     loading="lazy"
                     alt=""
-                    src="./public/image@2x.png"
+                    src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\Pic2.jpg"
                   />
-
                   <div class="task-details">
                     <b class="title1">ARK Team</b>
                     <div class="your-job-as">Task Management App</div>
@@ -142,7 +138,7 @@
                           class="vuesaxlinearbook-icon"
                           loading="lazy"
                           alt=""
-                          src="./public/vuesaxlinearbook-1.svg"
+                          src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\open-book.png"
                         />
                       </div>
                       <div class="tasks">5 Tasks</div>
@@ -156,7 +152,53 @@
             </div>
           </div>
         </div>
-      </section>
-    </div>
-  </body>
-</html>
+    <script>
+      var newTeamButton = document.querySelector(".category");
+
+      if (newTeamButton) {
+        newTeamButton.addEventListener("click", function () {
+          window.location.href = "CreateTeam.html";
+        });
+      }
+
+      var overviewButton = document.getElementById("overviewButton");
+      var isButtonsAdded = false; 
+      var newButton1;
+      var newButton2;
+
+      if (overviewButton) {
+        overviewButton.addEventListener("click", function () {
+          if (!isButtonsAdded) {
+            newButton1 = document.createElement("button");
+            newButton1.className = "course";
+            newButton1.innerHTML = `
+              <img class="vuesaxlinearbook-icon" loading="lazy" alt="" src="Foto/open-book.png" />
+              <b class="all-task">All Task</b>
+              `;
+  
+              newButton2 = document.createElement("button");
+              newButton2.className = "course1";
+              newButton2.id = "course";
+              newButton2.innerHTML = `
+                <img class="task-icon" loading="lazy" alt="" src="Foto/list.png" />
+                <b class="my-task">My Task</b>
+              `;
+  
+              var parentElement = overviewButton.parentElement;
+  
+              parentElement.insertBefore(newButton1, overviewButton.nextSibling);
+  
+              parentElement.insertBefore(newButton2, newButton1.nextSibling);
+  
+              isButtonsAdded = true;
+            } else {
+              newButton1.remove();
+              newButton2.remove();
+  
+              isButtonsAdded = false; 
+            }
+          });
+        }
+      </script>
+    </body>
+  </html>

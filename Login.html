@@ -117,8 +117,18 @@
         });
       }
 
+      var loginButton = document.getElementById("loginButton");
+      if (loginButton) {
+        loginButton.addEventListener("click", function (e) {
+          // Redirect to Teams page
+          window.location.href = "Teams.html"; // Replace with your Teams page URL
+        });
+      }
+
+      // Code for showing/hiding password characters
       var passwordInput = document.querySelector(".password-input-field");
       var showPasswordIcon = document.querySelector(".show-password-icon");
+      var passwordInput = document.querySelector(".password-input-field");
 
       function togglePasswordType(showPassword) {
         passwordInput.type = showPassword ? "text" : "password";

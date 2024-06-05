@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./CTglobal.css" />
+    <link rel="stylesheet" href="./CreateTeam.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="create-team">
+      <div class="side-menu">
+        <div class="side-menu-inner">
+          <div class="frame-parent">
+            <div class="ark-wrapper">
+              <b class="ark">ARK</b>
+            </div>
+            <div class="side-menu1">
+              <button id="overviewButton" class="overview">
+                <div class="overview1">
+                  <img
+                    class="vuesaxlinearcategory-2-icon"
+                    loading="lazy"
+                    alt=""
+                    src="Foto\menu.png"
+                  />
+                  <b class="teams">Teams</b>
+                </div>
+              </button>
+              <button class="mentors">
+                <div class="mentors1">
+                  <img
+                    class="vuesaxlinearmessage-icon"
+                    loading="lazy"
+                    alt=""
+                    src="Foto/message.png"
+                  />
+
+                  <b class="message">Message</b>
+                </div>
+              </button>
+              <button class="settings">
+                <div class="settings1">
+                  <img
+                    class="vuesaxlinearsetting-2-icon"
+                    loading="lazy"
+                    alt=""
+                    src="Foto\settings.png"
+                  />
+
+                  <b class="settings2">Settings</b>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="logo"></div>
+        <div class="line"></div>
+      </div>
+      <section class="header-parent">
+        <header class="header">
+          <div class="title-wrapper">
+            <b class="title">New Team</b>
+          </div>
+          <div class="header-inner">
+            <div class="notif-parent">
+              <img
+                class="notif-icon"
+                loading="lazy"
+                alt=""
+                src="Foto\notification-bell.png"
+              />
+
+              <img
+                class="vector-icon"
+                loading="lazy"
+                alt=""
+                src="Foto\profile-user.png"
+              />
+            </div>
+          </div>
+          <div class="profil-wrapper">
+            <div class="profil"></div>
+          </div>
+        </header>
+        <div class="frame-wrapper">
+          <div class="frame-group">
+            <div class="title-parent">
+              <button class="title1">back to team list</button>
+              <img
+                class="vuesaxlineararrow-right-icon"
+                loading="lazy"
+                id="vuesaxlineararrowRightIcon"
+                src="Foto\back.png"
+              />
+            </div>
+            <div class="frame-container">
+              <div class="frame-div">
+                <div class="title-group">
+                  <b class="title2">Team name</b>
+                  <input class="frame-child" type="text" id="teamNameInput" />
+                </div>
+                <div class="title-container">
+                  <b class="title3">Team description</b>
+                  <textarea class="frame-item" rows="{6}" cols="{24}">
+                  </textarea>
+                </div>
+                <button class="group-button" id="groupButton">
+                  <button class="rectangle-parent">
+                    <div class="frame-inner"></div>
+                    <div class="create-team1">Create Team</div>
+                  </button>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      var newTeamButton = document.querySelector(".category");
+
+      if (newTeamButton) {
+        newTeamButton.addEventListener("click", function () {
+          window.location.href = "CreateTeam.html";
+        });
+      }
+
+      var overviewButton = document.getElementById("overviewButton");
+      var isButtonsAdded = false;
+      var newButton1;
+      var newButton2;
+
+      if (overviewButton) {
+        overviewButton.addEventListener("click", function () {
+          if (!isButtonsAdded) {
+            newButton1 = document.createElement("button");
+            newButton1.className = "course";
+            newButton1.innerHTML = `
+              <img class="vuesaxlinearbook-icon" loading="lazy" alt="" src="Foto/open-book.png" />
+              <b class="all-task">All Task</b>
+              `;
+
+            newButton2 = document.createElement("button");
+            newButton2.className = "course1";
+            newButton2.id = "course";
+            newButton2.innerHTML = `
+                <img class="task-icon" loading="lazy" alt="" src="Foto/list.png" />
+                <b class="my-task">My Task</b>
+              `;
+
+            var parentElement = overviewButton.parentElement;
+
+            parentElement.insertBefore(newButton1, overviewButton.nextSibling);
+
+            parentElement.insertBefore(newButton2, newButton1.nextSibling);
+
+            isButtonsAdded = true;
+          } else {
+            newButton1.remove();
+            newButton2.remove();
+
+            isButtonsAdded = false;
+          }
+        });
+      }
+      var backButton = document.querySelector(".title1");
+      var arrowIcon = document.querySelector(".vuesaxlineararrow-right-icon");
+      var teamNameInput = document.getElementById("teamNameInput");
+      var groupButton = document.getElementById("groupButton");
+
+      if (backButton) {
+        backButton.addEventListener("click", function () {
+          window.location.href = "Teams.html"; // Ganti dengan URL halaman Teams.html Anda
+        });
+      }
+
+      if (arrowIcon) {
+        arrowIcon.addEventListener("click", function () {
+          window.location.href = "Teams.html"; // Ganti dengan URL halaman Teams.html Anda
+        });
+      }
+
+      function updateCreateTeamButton() {
+        var teamName = teamNameInput.value.trim();
+
+        // Menampilkan notifikasi alert jika input team name kosong
+        if (teamName === "") {
+          alert("Team name cannot be empty!");
+        }
+
+        // Menonaktifkan tombol jika input kosong
+        groupButton.disabled = teamName === "";
+      }
+
+      groupButton.addEventListener("click", updateCreateTeamButton);
+    </script>
+  </body>
+</html>
