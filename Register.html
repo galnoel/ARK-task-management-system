@@ -11,129 +11,135 @@
     />
   </head>
   <body>
-    <div class="sign-in-register">
-      <section class="sign-in1-register">
-        <div class="sign-in-content-register">
-          <div class="frame-parent-register">
-            <div class="rectangle-parent-register">
-              <div class="frame-child-register"></div>
-              <div class="back-parent-register">
-                <b class="back-register" id="backTextRegister">Back</b>
-                <img
-                  class="vuesaxlineararrow-right-icon-register"
-                  loading="lazy"
-                  alt=""
-                  src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\back.png"
-                  id="vuesaxlineararrowRightIconRegister"
-                />
-              </div>
-              <div class="login-wrapper-register">
-                <div class="login-register" id="lOGINTextRegister">LOGIN</div>
-              </div>
-            </div>
-            <div class="register-background-parent-register">
-              <div class="register-background-register"></div>
-              <button class="rectangle-group-register">
-                <div class="frame-item-register"></div>
-                <div class="register-register">Register</div>
-              </button>
-            </div>
-          </div>
-          <div class="sign-in-content-inner-register">
-            <div class="frame-group-register">
-              <div class="ark-wrapper-register">
-                <b class="ark-register">ARK</b>
-              </div>
-              <div class="name-parent-register">
-                <div class="name-register">
-                  <input
-                    type="text"
-                    class="name-input-register"
-                    placeholder="Name"
-                    id="nameInput"
-                  />
-                </div>
-                <div class="line-wrapper-register">
-                  <div class="frame-inner-register"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="email-input-border-parent-register">
-          <div class="email-input-border-register"></div>
-          <div class="email-input-content-register">
-            <div class="email-input-fields-register">
-              <div class="email-field-register">
-                <input
-                  type="email"
-                  class="email-input-register"
-                  placeholder="Email"
-                  id="emailInput"
-                />
-                <div class="email-field-inner-register">
-                  <div class="line-div-register"></div>
-                </div>
-              </div>
-              <div class="password-field-register">
-                <div class="password-input-register">
-                  <input
-                    type="password"
-                    id="password-field"
-                    class="password-field-register"
-                    placeholder="Password"
-                  />
+    
+      <div class="sign-in-register">
+        <section class="sign-in1-register">
+          <form action="register.php" method="post">
+          <div class="sign-in-content-register">
+            <div class="frame-parent-register">
+              <div class="rectangle-parent-register">
+                <div class="frame-child-register"></div>
+                <div class="back-parent-register">
+                  <b class="back-register" id="backTextRegister">Back</b>
                   <img
-                    src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\show.png"
-                    alt="Show Password"
-                    class="show-password-icon-R"
-                    onclick="togglePasswordVisibility()"
+                    class="vuesaxlineararrow-right-icon-register"
+                    loading="lazy"
+                    alt=""
+                    src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\back.png"
+                    id="vuesaxlineararrowRightIconRegister"
                   />
                 </div>
-                <div class="password-field-inner-register">
-                  <div class="frame-child1-register"></div>
+                <div class="login-wrapper-register">
+                  <div class="login-register" id="lOGINTextRegister">LOGIN</div>
                 </div>
-                <div class="account-options-register">
-                  <div class="login-option-register">
-                    <div class="login-link-register">
-                      <div class="already-have-an-register">
-                        Already have an account?
-                      </div>
-                      <b class="login1-register" id="loginTextRegister"
-                        >Login</b
-                      >
-                    </div>
+              </div>
+              <div class="register-background-parent-register">
+                <div class="register-background-register"></div>
+                <button type="submit" class="rectangle-group-register">
+                  <div class="frame-item-register"></div>
+                  <div class="register-register">Register</div>
+                </button>
+              </div>
+            </div>
+            <div class="sign-in-content-inner-register">
+              <div class="frame-group-register">
+                <div class="ark-wrapper-register">
+                  <b class="ark-register">ARK</b>
+                </div>
+                <div class="name-parent-register">
+                  <div class="name-register">
+                    <input
+                      type="text"
+                      class="name-input-register"
+                      placeholder="Name"
+                      id="nameInput"
+                      name="name"
+                    />
                   </div>
-                  <button
-                    id="registerButton"
-                    style="
-                      text-decoration: none;
-                      color: inherit;
-                      background: none;
-                      border: none;
-                      cursor: pointer;
-                    "
-                  >
-                    <div class="register-button-register">
-                      <div
-                        class="register-button-background-register"
-                        id="registerButtonBackgroundRegister"
-                      ></div>
-                      <div
-                        class="register1-register"
-                        id="registerText1Register"
-                      >
-                        Register
-                      </div>
-                    </div>
-                  </button>
+                  <div class="line-wrapper-register">
+                    <div class="frame-inner-register"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+          <div class="email-input-border-parent-register">
+            <div class="email-input-border-register"></div>
+            <div class="email-input-content-register">
+              <div class="email-input-fields-register">
+                <div class="email-field-register">
+                  <input
+                    type="email"
+                    class="email-input-register"
+                    placeholder="Email"
+                    id="emailInput"
+                    name="email"
+                  />
+                  <div class="email-field-inner-register">
+                    <div class="line-div-register"></div>
+                  </div>
+                </div>
+                <div class="password-field-register">
+                  <div class="password-input-register">
+                    <input
+                      type="password"
+                      id="password-field"
+                      class="password-field-register"
+                      placeholder="Password"
+                      name="password"
+                    />
+                    <img
+                      src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\show.png"
+                      alt="Show Password"
+                      class="show-password-icon-R"
+                      onclick="togglePasswordVisibility()"
+                    />
+                  </div>
+                  <div class="password-field-inner-register">
+                    <div class="frame-child1-register"></div>
+                  </div>
+                  <div class="account-options-register">
+                    <div class="login-option-register">
+                      <div class="login-link-register">
+                        <div class="already-have-an-register">
+                          Already have an account?
+                        </div>
+                        <b class="login1-register" id="loginTextRegister">Login</b>
+                      </div>
+                    </div>
+                    <button
+                      type="submit"
+                      id="registerButton"
+                      style="
+                        text-decoration: none;
+                        color: inherit;
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                      "
+                    >
+                      <div class="register-button-register">
+                        <div
+                          class="register-button-background-register"
+                          id="registerButtonBackgroundRegister"
+                        ></div>
+                        <div
+                          class="register1-register"
+                          id="registerText1Register"
+                        >
+                          Register
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        </section>
+      </div>
+    
 
     <script>
       var backTextRegister = document.getElementById("backTextRegister");
