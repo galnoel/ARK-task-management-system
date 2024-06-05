@@ -123,22 +123,37 @@
       var loginButton = document.getElementById("loginButton");
       if (loginButton) {
         loginButton.addEventListener("click", function (e) {
-          // Redirect to Teams page
-          window.location.href = "Teams.html"; // Replace with your Teams page URL
+          // Ambil nilai dari input email dan password
+          var emailInput = document.querySelector(".email-input");
+          var passwordInput = document.querySelector(".password-input-field");
+
+          var emailValue = emailInput.value.trim(); // Hapus spasi di awal dan akhir
+          var passwordValue = passwordInput.value.trim(); // Hapus spasi di awal dan akhir
+
+          // Cek apakah kedua input telah diisi
+          if (emailValue !== "" && passwordValue !== "") {
+            // Redirect to Teams page
+            window.location.href = "Teams.html"; // Replace with your Teams page URL
+          } else {
+            // Jika salah satu input belum diisi, beri peringatan atau lakukan tindakan lain sesuai kebutuhan
+            alert("Please fill in both email and password fields.");
+
+            // Menahan default action dari tombol "Login" (yaitu mengarahkan ke halaman Teams.html)
+            e.preventDefault();
+          }
         });
       }
 
-      // Code for showing/hiding password characters
-      var passwordInput = document.querySelector(".password-input-field");
       var showPasswordIcon = document.querySelector(".show-password-icon");
+      var passwordInput = document.querySelector(".password-input-field");
 
       function togglePasswordType(showPassword) {
         passwordInput.type = showPassword ? "text" : "password";
-        showPasswordIcon.classList.toggle("show-password"); // Optional: Update icon class
+        showPasswordIcon.classList.toggle("show-password");
       }
 
       showPasswordIcon.addEventListener("click", function () {
-        var showPassword = !passwordInput.type.match("text"); // Check if currently hidden
+        var showPassword = !passwordInput.type.match("text");
         togglePasswordType(showPassword);
       });
     </script>
