@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./index.css" />
     <link
@@ -39,48 +38,52 @@
           </div>
         </div>
         <div class="content">
-          <div class="form-container">
-            <div class="ark-wrapper">
-              <b class="ark">ARK</b>
-            </div>
-            <div class="email-input-wrapper">
-              <input type="email" class="email-input" placeholder="Email" />
-              <div class="email-separator-wrapper">
-                <div class="email-separator"></div>
+          <form action="login.php" method="post">
+            <div class="form-container">
+              <div class="ark-wrapper">
+                <b class="ark">ARK</b>
               </div>
-            </div>
+              <div class="email-input-wrapper">
+                <input type="email" name="email" class="email-input" placeholder="Email" required />
+                <div class="email-separator-wrapper">
+                  <div class="email-separator"></div>
+                </div>
+              </div>
 
-            <div class="password-input-parent">
-              <div class="password-input">
-                <input
-                  type="password"
-                  class="password-input-field"
-                  placeholder="Password"
+              <div class="password-input-parent">
+                <div class="password-input">
+                  <input
+                    type="password"
+                    name="password"
+                    class="password-input-field"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
+                <div class="password-separator-wrapper">
+                  <div class="password-separator"></div>
+                </div>
+                <img
+                  src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\show.png"
+                  alt="Show Password"
+                  class="show-password-icon"
                 />
               </div>
-              <div class="password-separator-wrapper">
-                <div class="password-separator"></div>
-              </div>
-              <img
-                src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\show.png"
-                alt="Show Password"
-                class="show-password-icon"
-              />
             </div>
-          </div>
 
-          <div class="actions">
-            <div class="registration-info">
-              <div class="register-prompt">
-                <div class="dont-have-an">Don’t have an account?</div>
-                <b class="register1" id="registerText1">Register</b>
+            <div class="actions">
+              <div class="registration-info">
+                <div class="register-prompt">
+                  <div class="dont-have-an">Don’t have an account?</div>
+                  <b class="register1" id="registerText1">Register</b>
+                </div>
               </div>
+              <button type="submit" class="login-button" id="loginButton">
+                <div class="button-background" id="buttonBackground"></div>
+                <div class="login2" id="loginText">Login</div>
+              </button>
             </div>
-            <div class="login-button" id="loginButton">
-              <div class="button-background" id="buttonBackground"></div>
-              <div class="login2" id="loginText">Login</div>
-            </div>
-          </div>
+          </form>
         </div>
       </section>
     </div>
@@ -89,56 +92,41 @@
       var backText = document.getElementById("backText");
       if (backText) {
         backText.addEventListener("click", function (e) {
-          // Redirect to landing page URL
-          window.location.href = "LandingPage.html"; // Replace with your landing page URL
+          window.location.href = "LandingPage.html";
         });
       }
 
-      var vuesaxlineararrowRightIcon = document.getElementById(
-        "vuesaxlineararrowRightIcon"
-      );
+      var vuesaxlineararrowRightIcon = document.getElementById("vuesaxlineararrowRightIcon");
       if (vuesaxlineararrowRightIcon) {
         vuesaxlineararrowRightIcon.addEventListener("click", function (e) {
-          // Redirect to landing page URL
-          window.location.href = "LandingPage.html"; // Replace with your landing page URL
+          window.location.href = "LandingPage.html";
         });
       }
 
       var registerText = document.getElementById("registerText");
       if (registerText) {
         registerText.addEventListener("click", function (e) {
-          // Redirect to Register page
-          window.location.href = "Register.html"; // Replace with your Register page URL
+          window.location.href = "Register.html";
         });
       }
 
       var registerText1 = document.getElementById("registerText1");
       if (registerText1) {
         registerText1.addEventListener("click", function (e) {
-          // Redirect to Register page
-          window.location.href = "Register.html"; // Replace with your Register page URL
+          window.location.href = "Register.html";
         });
       }
 
-      var loginButton = document.getElementById("loginButton");
-      if (loginButton) {
-        loginButton.addEventListener("click", function (e) {
-          // Redirect to Teams page
-          window.location.href = "Teams.html"; // Replace with your Teams page URL
-        });
-      }
-
-      // Code for showing/hiding password characters
       var passwordInput = document.querySelector(".password-input-field");
       var showPasswordIcon = document.querySelector(".show-password-icon");
 
       function togglePasswordType(showPassword) {
         passwordInput.type = showPassword ? "text" : "password";
-        showPasswordIcon.classList.toggle("show-password"); // Optional: Update icon class
+        showPasswordIcon.classList.toggle("show-password");
       }
 
       showPasswordIcon.addEventListener("click", function () {
-        var showPassword = !passwordInput.type.match("text"); // Check if currently hidden
+        var showPassword = !passwordInput.type.match("text");
         togglePasswordType(showPassword);
       });
     </script>
