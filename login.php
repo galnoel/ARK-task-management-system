@@ -1,6 +1,7 @@
 <?php
 // Include database configuration file
 require 'config.php';
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -45,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 
                                 // Execute statement
                                 if ($stmt->execute()) {
+                                    $_SESSION['token'] = $token;
                                     // Redirect to Teams page
                                     header("Location: Teams.html");
                                     exit();
