@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./Teams.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@500;600;700&display=swap"
@@ -55,6 +54,14 @@
               </button>
             </nav>
           </div>
+          <div class="bottom-content-wrapper">
+            <button id="logoutButton" class="bottom-content">
+              <img class="shutdown-icon" alt="" src="Foto/logoout.png" />
+              <div class="log-out-wrapper">
+                <div class="log-out">Log out</div>
+              </div>
+            </button>
+          </div>
         </div>
         <div class="logo"></div>
         <div class="menu-divider"></div>
@@ -66,7 +73,7 @@
               class="notif-icon"
               loading="lazy"
               alt=""
-              src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\notification-bell.png"
+              src="Foto\notification-bell.png"
             />
             <div class="profile-icon">
               <div class="profile-image">
@@ -78,7 +85,7 @@
                         <img
                           class="search-normal-icon"
                           alt=""
-                          src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\search.png"
+                          src="Foto\search.png"
                         />
                         <input
                           type="text"
@@ -91,7 +98,7 @@
                         <img
                           class="category-icon"
                           alt=""
-                          src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\plus.png"
+                          src="Foto\plus.png"
                         />
                         <a class="new-team">New Team</a>
                       </button>
@@ -108,7 +115,7 @@
               class="notification-content-icon"
               loading="lazy"
               alt=""
-              src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\profile-user.png"
+              src="Foto\profile-user.png"
             />
           </div>
         </section>
@@ -125,7 +132,7 @@
                     class="image-icon"
                     loading="lazy"
                     alt=""
-                    src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\Pic2.jpg"
+                    src="Foto\Pic2.jpg"
                   />
                   <div class="task-details">
                     <b class="title1">ARK Team</b>
@@ -138,7 +145,7 @@
                           class="vuesaxlinearbook-icon"
                           loading="lazy"
                           alt=""
-                          src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\open-book.png"
+                          src="Foto\open-book.png"
                         />
                       </div>
                       <div class="tasks">5 Tasks</div>
@@ -153,6 +160,12 @@
           </div>
         </div>
     <script>
+      var logoutButton = document.getElementById("logoutButton");
+      if (logoutButton) {
+      logoutButton.addEventListener("click", function () {
+      window.location.href = "LandingPage.html";
+      });
+      }
       var newTeamButton = document.querySelector(".category");
 
       if (newTeamButton) {
@@ -191,6 +204,12 @@
               parentElement.insertBefore(newButton2, newButton1.nextSibling);
   
               isButtonsAdded = true;
+              newButton1.addEventListener("click", function () {
+                window.location.href = "AllTask.html";
+              });
+              newButton2.addEventListener("click", function () {
+                window.location.href = "MyTask.html";
+              });
             } else {
               newButton1.remove();
               newButton2.remove();

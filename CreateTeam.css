@@ -1,3 +1,41 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-plus-jakarta-sans: "Plus Jakarta Sans";
+
+  /* font sizes */
+  --font-size-mini: 15px;
+  --font-size-6xl: 25px;
+  --font-size-xl: 20px;
+  --font-size-sm: 14px;
+
+  /* Colors */
+  --color-whitesmoke-100: #f9f9f9;
+  --color-whitesmoke-200: #f4f4f4;
+  --color-black: #000;
+  --primary-0: #fff;
+  --secondary-500: #141522;
+
+  /* Gaps */
+  --gap-6xl: 25px;
+  --gap-7xs: 6px;
+  --gap-xs: 12px;
+
+  /* Paddings */
+  --padding-xl: 20px;
+  --padding-6xl: 25px;
+  --padding-7xl: 26px;
+  --padding-9xs: 4px;
+  --padding-3xs: 10px;
+
+  /* Border radiuses */
+  --br-3xs: 10px;
+  --br-5xs: 8px;
+}
 .ark {
   width: 136px;
   position: relative;
@@ -203,6 +241,53 @@
   gap: 24px;
   font-size: var(--font-size-sm);
   color: var(--color-black);
+}
+.shutdown-icon {
+  height: 28px;
+  width: 28px;
+  position: relative;
+  top: 590px;
+  object-fit: cover;
+}
+.log-out {
+  position: relative;
+  top: 590px;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  line-height: 16px;
+  font-weight: 600;
+  font-family: var(--font-plus-jakarta-sans);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  min-width: 58px;
+}
+.log-out-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 5px 0 0;
+}
+.footer-content {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  flex-direction: row;
+  gap: 3px;
+}
+.footer,
+.footer-content,
+.side-menu-content,
+.side-menu-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.footer {
+  flex-direction: row;
+  padding: 0 46px;
 }
 .frame-parent,
 .side-menu-inner {
