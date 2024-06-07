@@ -12,26 +12,43 @@ body {
   /* font sizes */
   --small-text-size: 16px;
   --font-size-21xl: 40px;
-  --font-size-5xl: 24px;
+  --subheading-size: 24px;
+  --body-text-size: 20px;
+  --title-size: 64px;
+  --font-size-19xl: 38px;
+  --font-size-32xl: 51px;
+  --font-size-11xl: 30px;
 
   /* Colors */
   --color-white: #fff;
   --color-darkslategray-100: #454545;
+  --color-darkslategray-200: #333;
   --color-black: #000;
+  --color-dimgray: #505050;
 
   /* Spacing */
+  --spacing-s: 24px;
   --spacing-m: 48px;
 
   /* Gaps */
   --gap-xl: 20px;
   --gap-5xl: 24px;
-  --gap-5xs: 8px;
+  --gap-8xl: 27px;
+  --gap-8xs: 5px;
+  --gap-4xs: 9px;
 
   /* Paddings */
   --padding-12xs: 1px;
+  --padding-61xl: 80px;
+  --padding-21xl: 40px;
   --padding-xl: 20px;
-  --padding-204xl: 223px;
+  --padding-sm: 14px;
   --padding-5xl: 24px;
+  --padding-20xl: 39px;
+  --padding-9xs: 4px;
+  --padding-8xs: 5px;
+  --padding-19xl: 38px;
+  --padding-18xl: 37px;
   --padding-3xs: 10px;
 
   /* Border radiuses */

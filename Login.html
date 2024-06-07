@@ -18,7 +18,7 @@
             <div class="back-navigation-child"></div>
             <b class="back" id="backText">Back</b>
             <img
-              src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\back.png"
+              src="Foto\back.png"
               alt=""
               class="vuesaxlineararrow-right-icon"
               id="vuesaxlineararrowRightIcon"
@@ -44,7 +44,13 @@
                 <b class="ark">ARK</b>
               </div>
               <div class="email-input-wrapper">
-                <input type="email" name="email" class="email-input" placeholder="Email" required />
+                <input
+                  type="email"
+                  name="email"
+                  class="email-input"
+                  placeholder="Email"
+                  required
+                />
                 <div class="email-separator-wrapper">
                   <div class="email-separator"></div>
                 </div>
@@ -64,7 +70,7 @@
                   <div class="password-separator"></div>
                 </div>
                 <img
-                  src="C:\INDRA\KULIAH\SEMESTER 4\Pemrograman Web\Tugas Akhir\Foto\show.png"
+                  src="Foto\show.png"
                   alt="Show Password"
                   class="show-password-icon"
                 />
@@ -96,7 +102,9 @@
         });
       }
 
-      var vuesaxlineararrowRightIcon = document.getElementById("vuesaxlineararrowRightIcon");
+      var vuesaxlineararrowRightIcon = document.getElementById(
+        "vuesaxlineararrowRightIcon"
+      );
       if (vuesaxlineararrowRightIcon) {
         vuesaxlineararrowRightIcon.addEventListener("click", function (e) {
           window.location.href = "LandingPage.html";
