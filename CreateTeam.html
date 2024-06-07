@@ -109,24 +109,37 @@
                 src="Foto/back.png"
               />
             </div>
-            <div class="frame-container">
-              <div class="frame-div">
-                <div class="title-group">
-                  <b class="title2">Team name</b>
-                  <input class="frame-child" type="text" id="teamNameInput" />
-                </div>
-                <div class="title-container">
-                  <b class="title3">Team description</b>
-                  <textarea class="frame-item" rows="6" cols="24"></textarea>
-                </div>
-                <button class="group-button" id="groupButton">
-                  <div class="rectangle-parent">
-                    <div class="frame-inner"></div>
-                    <div class="create-team1">Create Team</div>
+            <form action="create_team.php" method="post">
+              <div class="frame-container">
+                <div class="frame-div">
+                  <div class="title-group">
+                    <b class="title2">Team name</b>
+                    <input
+                      class="frame-child"
+                      type="text"
+                      id="teamNameInput"
+                      name="teamName"
+                    />
                   </div>
-                </button>
+                  <div class="title-container">
+                    <b class="title3">Team description</b>
+                    <textarea
+                      class="frame-item"
+                      rows="{6}"
+                      cols="{24}"
+                      name="teamDescription"
+                    >
+                    </textarea>
+                  </div>
+                  <button type="submit" class="group-button" id="groupButton">
+                    <button class="rectangle-parent">
+                      <div class="frame-inner"></div>
+                      <div class="create-team1">Create Team</div>
+                    </button>
+                  </button>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </section>

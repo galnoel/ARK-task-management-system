@@ -11,30 +11,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($name) || empty($email) || empty($password)) {
         echo "Please fill in all fields.";
     } else {
-        // Hash the password
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        // Prepare SQL statement to check if the email already exists
+        $checkEmailSql = "SELECT id FROM users WHERE email = ?";
 
-        // Prepare SQL statement
-        $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
-
-        // Prepare statement
-        if ($stmt = $conn->prepare($sql)) {
+        if ($checkStmt = $conn->prepare($checkEmailSql)) {
             // Bind parameters
-            $stmt->bind_param("sss", $name, $email, $hashed_password);
+            $checkStmt->bind_param("s", $email);
 
             // Execute statement
-            if ($stmt->execute()) {
-                echo "Registration successful!";
-                header("Location: Login.html");
-                exit();
+            if ($checkStmt->execute()) {
+                // Store result
+                $checkStmt->store_result();
+
+                // Check if the email already exists
+                if ($checkStmt->num_rows > 0) {
+                    echo "An account with this email already exists.";
+                } else {
+                    // Hash the password
+                    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+                    // Prepare SQL statement for user insertion
+                    $insertSql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+
+                    // Prepare statement
+                    if ($stmt = $conn->prepare($insertSql)) {
+                        // Bind parameters
+                        $stmt->bind_param("sss", $name, $email, $hashed_password);
+
+                        // Execute statement
+                        if ($stmt->execute()) {
+                            echo "Registration successful!";
+                            header("Location: Login.html");
+                            exit();
+                        } else {
+                            echo "Error: " . $stmt->error;
+                        }
+
+                        // Close statement
+                        $stmt->close();
+                    } else {
+                        echo "Error preparing statement: " . $conn->error;
+                    }
+                }
             } else {
-                echo "Error: " . $stmt->error;
+                echo "Error executing check email statement: " . $checkStmt->error;
             }
 
             // Close statement
-            $stmt->close();
+            $checkStmt->close();
         } else {
-            echo "Error preparing statement: " . $conn->error;
+            echo "Error preparing check email statement: " . $conn->error;
         }
 
         // Close connection
