@@ -50,9 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     
                                     // Redirect based on the role
                                     if ($role === 'admin') {
-                                        header("Location: AdmAllTask.html"); // Replace with your admin page
+                                        header("Location: HomeAdmin.php"); // Replace with your admin page
                                     } else {
-                                        header("Location: Teams.html"); // Replace with your main page
+                                        header("Location: HomeMember.php"); // Replace with your main page
                                     }
                                     exit();
                                 } else {
