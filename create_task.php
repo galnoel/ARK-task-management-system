@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         // Insert the new task into the database
-        $sql = "INSERT INTO tasks (name, deadline, created_by) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO task (name, deadline, user_id) VALUES (?, ?, ?)";
         if ($stmt = $conn->prepare($sql)) {
             $stmt->bind_param("ssi", $taskName, $deadline, $createdBy);
             $stmt->execute();
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->commit();
 
         // Redirect to Teams page
-        header("Location: Task.html");
+        header("Location: tasks.php");
         exit();
     } catch (Exception $e) {
         // Rollback transaction
