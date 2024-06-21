@@ -31,12 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
                     // Prepare SQL statement for user insertion
-                    $insertSql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+                    $insertSql = "INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)";
 
                     // Prepare statement
                     if ($stmt = $conn->prepare($insertSql)) {
                         // Bind parameters
-                        $stmt->bind_param("sss", $name, $email, $hashed_password);
+                        $role = 'member';
+                        $stmt->bind_param("ssss", $name, $email, $hashed_password, $role);
 
                         // Execute statement
                         if ($stmt->execute()) {
