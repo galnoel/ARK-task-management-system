@@ -13,31 +13,23 @@ if ($stmtToken = $conn->prepare($sqlToken)) {
     $stmtToken->execute();
     $stmtToken->bind_result($userId);
     if ($stmtToken->fetch()) {
+        // Close the token statement
+        $stmtToken->close();
+
         // Query tasks for the authenticated user
-        $sqlTasks = "SELECT name, deadline, is_complete, completed_at, created_at, updated_at 
-                     FROM tasks 
-                     WHERE created_by = ?";
+        $sqlTasks = "SELECT id, name, deadline, is_complete, completed_at, created_at 
+                     FROM task
+                     WHERE user_id = ?";
         if ($stmtTasks = $conn->prepare($sqlTasks)) {
             $stmtTasks->bind_param('i', $userId);
             $stmtTasks->execute();
-            $stmtTasks->bind_result($taskId, $taskName, $taskDeadline, $isComplete, $completedAt, $createdAt, $updatedAt);
+            $resultTasks = $stmtTasks->get_result(); // Get the result set
 
             // Fetching tasks into an array
             $tasks = array();
-            while ($stmtTasks->fetch()) {
-                $task = array(
-                    'name' => $taskName,
-                    'deadline' => $taskDeadline,
-                    'is_complete' => $isComplete,
-                    'completed_at' => $completedAt,
-                    'created_at' => $createdAt,
-                    'updated_at' => $updatedAt
-                );
-                $tasks[] = $task;
+            while ($row = $resultTasks->fetch_assoc()) {
+                $tasks[] = $row;
             }
-
-            // Output tasks as JSON or process as needed
-            echo json_encode($tasks);
 
             $stmtTasks->close();
         } else {
@@ -46,12 +38,17 @@ if ($stmtToken = $conn->prepare($sqlToken)) {
     } else {
         echo "Invalid token. Please log in again.";
     }
-    $stmtToken->close();
+    // Close the token statement if not already closed
+    // if (isset($stmtToken)) {
+    //     $stmtToken->close();
+    // }
 } else {
     echo "Error preparing token statement: " . $conn->error;
 }
 
 // Close connection
 $conn->close();
+
+// Output tasks as JSON or process as needed
+// echo json_encode($tasks);
 ?>
-      
