@@ -12,12 +12,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Fetch user_id from the tokens table using the token
-    $sql = "SELECT user_id FROM tokens WHERE token = ?";
+    // Fetch user_id and role from the tokens table using the token
+    $sql = "SELECT users.id, users.role FROM tokens JOIN users ON tokens.user_id = users.id WHERE tokens.token = ?";
     if ($stmt = $conn->prepare($sql)) {
-        $stmt->bind_param("s", $token);+
+        $stmt->bind_param("s", $token);
         $stmt->execute();
-        $stmt->bind_result($userId);
+        $stmt->bind_result($userId, $role);
         if ($stmt->fetch()) {
             $stmt->close();
         } else {
@@ -49,18 +49,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt = $conn->prepare($sql)) {
             $stmt->bind_param("ssi", $taskName, $deadline, $createdBy);
             $stmt->execute();
-            $teamId = $stmt->insert_id;
             $stmt->close();
         } else {
             throw new Exception("Error preparing statement: " . $conn->error);
         }
 
-
         // Commit transaction
         $conn->commit();
 
-        // Redirect to Teams page
-        header("Location: tasks.php");
+        // Redirect based on user role
+        if ($role === 'admin') {
+            header("Location: HomeAdmin.php"); // Replace with your admin page
+        } else {
+            header("Location: HomeMember.php"); // Replace with your main page
+        }
         exit();
     } catch (Exception $e) {
         // Rollback transaction
