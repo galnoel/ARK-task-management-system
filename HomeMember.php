@@ -80,7 +80,7 @@ require 'get_user_task.php';
     <div class="header">
         <h1>To-do List</h1>
         <div>
-            <button onclick="window.location.href='CreateTask.php'">New Task</button>
+            <button onclick="window.location.href='CreateTaskMember.php'">New Task</button>
             <a href="logout.php">Log out</a>
         </div>
     </div>
